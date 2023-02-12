@@ -1,0 +1,6 @@
+header {
+    @apply bg-green-400 px-5 lg:px-12 py-7 flex items-center text-white justify-between font-bold text-lg underline;
+    &-logo{
+        @apply w-40 pr-4 no-underline;
+    }
+}
