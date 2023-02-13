@@ -1,22 +1,16 @@
 .pokemonCard{
-    @apply hover:scale-105 transform duration-150 w-[300px] inline-block text-center;
+    @apply hover:scale-105 transform duration-150 inline-block text-center;
 
-    &_image{
-        @apply h-60 w-52 overflow-hidden inline-block;
-        border-radius: 0px 0px 20px 20px;
-
-        img{
-            @apply h-60;
-            margin: -35px 0px 0px -70px;
-        }
-        &_inner-skew{
-        @apply inline-block rounded-3xl overflow-hidden p-0 bg-slate-300 w-[200px] h-[250px];
-        transform: skew(0deg, 13deg);
-        margin: 30px 0px 0px 0px;
-        }
-    }
     &_content{
-        @apply cursor-pointer shadow-xl rounded-2xl p-7 pt-36 bg-white text-lg;
-        margin: -120px 0px 0px 0px;
+        @apply cursor-pointer shadow-xl rounded-2xl p-7 bg-white;
+    }
+    .image{
+        @apply flex justify-center;
+    }
+    .title{
+        @apply font-bold text-lg text-gray-800;
+    }
+    .types{
+        @apply pt-3 flex justify-between;
     }
 }

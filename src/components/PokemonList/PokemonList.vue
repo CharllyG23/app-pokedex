@@ -2,7 +2,10 @@
   <div class="pokemonList">
     <div class="pokemonList_container">
      <div class="pokemonList_content">
-      <pokemon-card v-for="(item, index) in pokemons.results" :key="index" :data="item" />
+      <pokemon-card v-if="Object.keys(search).length" :data="search" />
+      <template v-else>
+        <pokemon-card v-for="(item, index) in pokemons.results" :key="index" :data="item" />
+      </template>
      </div>
     </div>
   </div>
@@ -12,22 +15,23 @@ import { onMounted, ref } from 'vue';
 import PokemonCard from '../PokemonCard/PokemonCard.vue';
 import api from '../../support/http/api'
 
-const pokemons = ref({})
-const pokemonId = ref('')
+const props = defineProps({
+  search: { type: Object, default: {} }
+})
 
-const getPokemon = async () => {
+const pokemons = ref({})
+
+const getPokemonList = async () => {
   try{
-    const url = `${pokemonId}`
-    const response = await api.get(url)
+    const response = await api.get()
     pokemons.value = response.data
-    console.log('Respuesta',response)
   }catch (error) {
     console.error(error);
   }
 }
 
 onMounted(() =>{
-  getPokemon()
+  getPokemonList()
 })
 </script>
 <style lang="scss" scoped>
