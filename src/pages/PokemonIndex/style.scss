@@ -9,7 +9,7 @@ header {
     &_container{
         @apply w-full pt-10;
         &_content{
-            @apply max-w-screen-xl mx-auto px-10;
+            @apply max-w-screen-xl mx-auto px-6;
 
             .info{
                @apply bg-green-50 md:h-48 rounded-lg shadow-md flex flex-wrap flex-col-reverse md:flex-col; 

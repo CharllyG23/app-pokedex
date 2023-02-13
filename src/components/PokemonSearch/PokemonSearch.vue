@@ -19,7 +19,7 @@
                 Busca
             </button>
         </div>
-        <span class="error" v-if="error">Porfavor escreve de novo</span>
+        <span class="error" v-if="error">Nome de pokémon errado!</span>
     </div>
 </template>
 <script setup>
@@ -27,20 +27,26 @@ import { ref, watch } from 'vue'
 import  api from '../../support/http/api.js'
 
 const searchText = ref('')
-const emit = defineEmits('searchPokemon')
+const emit = defineEmits(['search-pokemon'])
 const error = ref(false)
 
 const search = async () => {
-    await api.get(searchText.value).then((response)=>{
-        emit('searchPokemon', response.data)
-        console.log('Respuesta search', response)
-    }).catch((err)=>{
-        console.log(err)
+    if(searchText.value.length >= 3){
+        await api.get(searchText.value).then((response)=>{
+            emit('search-pokemon', response.data)
+        }).catch((err)=>{
+            console.log(err)
+            error.value = true
+        })
+    }else {
         error.value = true
-    })
+    }
 }
 
 watch(() => searchText.value, async () => {
+    if(searchText.value.length === 0){
+        emit('search-pokemon', {})
+    }
     error.value = false
 })
 

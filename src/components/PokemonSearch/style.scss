@@ -1,5 +1,5 @@
 .pokemonSearch{
-    @apply max-w-screen-xl mx-auto px-10 pt-20 pb-10;
+    @apply max-w-screen-xl mx-auto px-6 pt-10 lg:pt-20 pb-10;
     &_container{
         @apply flex items-center;
 
@@ -13,7 +13,7 @@
             }
         }
         &__button{
-            @apply px-4 py-2.5 ml-2 text-sm font-medium text-white bg-green-500 rounded-md border border-green-400 hover:bg-green-400  focus:ring-blue-300;
+            @apply px-8 py-2.5 ml-2 text-sm font-medium text-white bg-green-500 rounded-md border border-green-400 hover:bg-green-400  focus:ring-blue-300;
         }
     }
 

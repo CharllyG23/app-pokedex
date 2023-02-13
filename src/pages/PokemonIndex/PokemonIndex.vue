@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="header-logo">
-         <h1>Pokedex</h1>
+      <h1>Pokedex</h1>
     </div>
     <a :href="gitHubUrl" target="_blank">Github</a>
   </header>
@@ -21,7 +21,7 @@
     </div>
   </section>
   <section>
-    <pokemon-search @searchPokemon="setSearchPokemon"></pokemon-search>
+    <pokemon-search @search-pokemon="setSearchPokemon"></pokemon-search>
   </section>
   <main>
     <pokemon-list :search="searchPokemon"></pokemon-list>
