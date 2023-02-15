@@ -1,10 +1,4 @@
 <template>
-  <header>
-    <div class="header-logo">
-      <h1>Pokedex</h1>
-    </div>
-    <a :href="gitHubUrl" target="_blank">Github</a>
-  </header>
   <section class="banner">
     <div class="banner_container">
       <div class="banner_container_content">
@@ -12,6 +6,7 @@
           <div class="info_header">
             <h3 class="info_header__title">Sua pokedéx oficial.</h3>
             <p class="info_header__subTitle">Aqui você encontra todos os pokémons que quiser!</p>
+            <!-- <a :href="gitHubUrl" target="_blank" class="info_header__subTitle pt-6">Github</a> -->
           </div>
           <div class="info_image">
             <img :src="pikachu" alt="pikachu" />

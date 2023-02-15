@@ -2,15 +2,18 @@
     @apply hover:scale-105 transform duration-150 inline-block text-center;
 
     &_content{
-        @apply cursor-pointer shadow-xl rounded-2xl p-7 bg-white;
+        @apply cursor-pointer shadow-xl rounded-xl h-32 p-4 bg-white items-center justify-between flex;
     }
     .image{
-        @apply flex justify-center;
+        @apply flex;
     }
     .title{
-        @apply font-bold text-lg text-gray-800;
+        @apply text-left font-bold text-xl text-gray-800;
     }
     .types{
-        @apply pt-3 flex justify-between;
+        @apply pt-3 flex gap-x-2 ;
+        &_name{
+            @apply font-normal px-2 py-1 text-sm text-white;
+        }
     }
 }
