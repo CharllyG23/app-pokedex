@@ -3,8 +3,8 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/app-pokedex',
   plugins: [vue()],
-
   server: {
     port: 8080
   },

@@ -59,7 +59,16 @@
         @apply text-slate-900 font-bold text-xl text-center;
       }
       .stats{
-        
+        @apply pt-4;
+        &_stat{
+          @apply flex items-center pt-2 border-b justify-between;
+          &__name{
+            @apply text-gray-800;
+          }
+          &__base{
+            @apply text-green-400 font-medium;
+          }
+        }
         h2{
           @apply font-medium text-base text-slate-600 pt-4;
         }
