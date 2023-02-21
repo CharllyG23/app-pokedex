@@ -4,8 +4,11 @@
     &_content{
         @apply cursor-pointer shadow-xl rounded-xl h-32 p-4 bg-white items-center justify-between flex;
     }
-    .image{
-        @apply flex;
+    .image_container{
+        @apply bg-green-200 rounded-full;
+        &_img{
+            @apply flex;
+        }
     }
     .title{
         @apply text-left font-bold text-xl text-gray-800;

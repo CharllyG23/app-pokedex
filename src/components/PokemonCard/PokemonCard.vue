@@ -9,8 +9,8 @@
           </div>
         </div>
       </div>
-      <div class="bg-green-100 rounded-full">
-        <div class="image">
+      <div class="image_container">
+        <div class="image_container_img">
           <img v-if="!loading" :src="pokemon.sprites.front_default" alt="pokemon" width="110" />
         </div>
       </div>

@@ -13,7 +13,7 @@
             }
         }
         &__button{
-            @apply px-8 py-2.5 ml-2 text-sm font-medium text-white bg-green-500 rounded-md border border-green-400 hover:bg-green-400  focus:ring-blue-300;
+            @apply px-8 py-2.5 ml-2 text-sm font-medium text-white bg-green-400 rounded-md border hover:bg-green-300  focus:ring-blue-300;
         }
     }
 

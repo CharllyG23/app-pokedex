@@ -30,11 +30,9 @@
 import { computed, ref, watch } from 'vue'
 import  api from '../../support/http/api.js'
 
-const searchText = ref('')
 const emit = defineEmits(['search-pokemon'])
+const searchText = ref('')
 const error = ref(false)
-
-const lowercaseLetters = computed(() => searchText.value.toUpperCase() )
 
 const search = async () => {
     const text = formatString(searchText.value)
@@ -45,8 +43,6 @@ const search = async () => {
             console.log(err)
             error.value = true
         })
-    }else {
-        error.value = true
     }
 } 
 
