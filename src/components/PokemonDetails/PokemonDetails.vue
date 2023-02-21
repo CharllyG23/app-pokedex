@@ -12,17 +12,26 @@
 							</button>
 						</div>
             <div class="py-modal__content_body">
-              <div class="image">
-                <img :src="info.sprites.front_default" alt="pokemon front" width="110" />
-                <img :src="info.sprites.back_default" alt="pokemon back" width="110" />
-              </div>
               <h1 class="title">{{ formatStringUppercase(info.name) }}</h1>
+              <div class="image">
+                <div class="image_bg">
+                  <img :src="info.sprites.front_default" alt="pokemon front" width="110" />
+                </div>
+                <div class="image_bg">
+                  <img :src="info.sprites.back_default" alt="pokemon back" width="110" />
+                </div>
+              </div>
+              <div class="types">
+                <div v-for="(type, index) in info.types" :key="index" :class="type.type.name" class="rounded">
+                  <span class="types_name" >{{formatString( type.type.name )}} </span>
+                </div>
+              </div>
               <div class="stats">
-                <h2>Stats</h2>
+                <h2>Base stats</h2>
                 <div class="stats">
                   <div v-for="(item, index) in info.stats" :key="index">
                     <div class="stats_stat">
-                      <span class="stats_stat__nam">{{ formatString(item.stat.name) }} </span>
+                      <span class="stats_stat__name">{{ formatString(item.stat.name) }} </span>
                       <span class="stats_stat__base">{{ item.base_stat }} </span>
                     </div>
                   </div>
@@ -68,4 +77,60 @@ const visibility = computed({
 </script>
 <style lang="scss" scoped>
 @import './style.scss';
+@import '../../assets/scss/pokemon_types.scss';
+
+.normal {
+  background-color: $normal
+}
+.fire {
+  background-color: $fire
+}
+.water {
+  background-color: $water
+}
+.grass {
+  background-color: $grass
+}
+.electric {
+  background-color: $electric
+}
+.ice {
+  background-color: $ice
+}
+.fighting {
+  background-color: $fighting
+}
+.poison {
+  background-color: $poison
+}
+.ground {
+  background-color: $ground
+}
+.flying {
+  background-color: $flying
+}
+.psychic {
+  background-color: $psychic
+}
+.bug {
+  background-color: $bug
+}
+.rock {
+  background-color: $rock
+}
+.ghost {
+  background-color: $ghost
+}
+.dark {
+  background-color: $dark
+}
+.dragon {
+  background-color: $dragon
+}
+.steel {
+  background-color: $steel
+}
+.fairy {
+  background-color: $fairy
+}
 </style>
